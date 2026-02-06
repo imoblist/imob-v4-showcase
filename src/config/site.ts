@@ -8,11 +8,18 @@ export const site = {
   // TODO (Lauro): definir a URL final (ex.: https://hub.imoblist.com.br)
   url: '',
 
-  // TODO (Lauro): informar número em formato internacional, ex: 5544999999999 (sem + e sem espaços)
+  // WhatsApp
+  // Número em formato internacional, somente dígitos (E.164), ex: 5544999999999 (sem + e sem espaços)
+  // Deixe vazio para desabilitar CTAs.
   whatsappNumberE164Digits: '',
-  // TODO (Lauro): definir mensagem padrão
+  // Mensagem padrão pré-preenchida no WhatsApp
   whatsappDefaultMessage:
     'Olá! Tenho interesse no Imoblist HUB (Integração Meta Ads via Catálogo) e gostaria de uma demonstração.',
+
+  // Formulário
+  // Endpoint HTTP(s) para receber POST JSON (ex.: https://api.seudominio.com/leads)
+  // Deixe vazio para desabilitar envio (UI sugere WhatsApp como fallback).
+  formEndpointUrl: '',
 };
 
 export function buildWhatsAppLink(
