@@ -251,7 +251,13 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
 
             <div class="field">
               <label for="telefone">Telefone / WhatsApp</label>
-              <input id="telefone" name="telefone" autocomplete="tel" placeholder="(DD) 9xxxx-xxxx" />
+              <input
+                id="telefone"
+                name="telefone"
+                autocomplete="tel"
+                placeholder="(DD) 9xxxx-xxxx"
+                required
+              />
             </div>
 
             <div class="field">
@@ -312,7 +318,7 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
               const payload = {
                 nome: String(fd.get('nome') || ''),
                 perfil: String(fd.get('perfil') || ''), // imobiliaria|corretor
-                imobiliaria_ou_corretor: String(fd.get('empresa') || ''),
+                empresa: String(fd.get('empresa') || ''),
                 email: String(fd.get('email') || ''),
                 telefone: String(fd.get('telefone') || ''),
                 mensagem: String(fd.get('mensagem') || ''),

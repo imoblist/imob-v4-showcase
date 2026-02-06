@@ -146,6 +146,13 @@ a {
   user-select: none;
 }
 
+button.btn {
+  appearance: none;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
 .btn--md {
   padding: 14px 18px;
   font-size: 0.95rem;
