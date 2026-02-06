@@ -1,0 +1,23 @@
+---
+const {
+  href = '#',
+  variant = 'primary',
+  size = 'md',
+  target,
+  rel,
+} = Astro.props;
+
+const classes = [
+  'btn',
+  `btn--${variant}`,
+  `btn--${size}`,
+  href === '#' ? 'btn--disabled' : '',
+]
+  .filter(Boolean)
+  .join(' ');
+
+const safeRel = target === '_blank' ? (rel ?? 'noopener noreferrer') : rel;
+---
+<a class={classes} href={href} target={target} rel={safeRel}>
+  <slot />
+</a>
