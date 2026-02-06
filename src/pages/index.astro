@@ -1,17 +1,280 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
+import Section from "../components/Section.astro";
+import { site, buildWhatsAppLink } from "../config/site";
 
+const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefaultMessage, {
+  utm_source: "showcase",
+  utm_medium: "cta",
+  utm_campaign: "imob-hub-meta",
+});
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Imoblist HUB — Integração Meta Ads" description={site.description}>
+  <header class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <p class="badge">Imoblist HUB • Integração Meta Ads</p>
+          <h1 class="h1">
+            Anúncios de imóveis no Meta Ads via Catálogo — com estoque sempre atualizado.
+          </h1>
+          <p class="lead">
+            Importamos seus imóveis do seu CRM (sem troca de sistema), geramos o catálogo no padrão
+            Meta e ajudamos seu time a rodar campanhas escaláveis. Para conversão, criamos landing
+            pages por imóvel — rápidas e focadas em lead.
+          </p>
+
+          <div class="hero__actions">
+            <Button href={wa} variant="whatsapp" target="_blank">Falar no WhatsApp</Button>
+            <Button href="#contato" variant="primary">Quero uma demonstração</Button>
+            <Button href="#como-funciona" variant="secondary">Como funciona</Button>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi">
+              <div class="kpi__num">100 → 5000+</div>
+              <div class="kpi__lbl">imóveis no catálogo, automatizado</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi__num">Atualização diária</div>
+              <div class="kpi__lbl">novos, alterados e baixados</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi__num">Sem criativos</div>
+              <div class="kpi__lbl">template dinâmico da Meta (valor/bairro)</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__card">
+          <h3 class="h3">Para quem é</h3>
+          <p>
+            Imobiliárias que querem escalar anúncios com catálogo, mantendo a gestão de tráfego com
+            o próprio time — e com uma página de destino que converte.
+          </p>
+          <div class="hero__actions">
+            <Button href={wa} variant="whatsapp" size="sm" target="_blank">WhatsApp</Button>
+            <Button href="#contato" variant="secondary" size="sm">Solicitar demo</Button>
+          </div>
+          <p class="muted" style="margin-top:10px; font-size:0.9rem;">
+            Nota: número do WhatsApp será configurado (CTA fica ativo assim que informado).
+          </p>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <Section
+      id="como-funciona"
+      eyebrow="Como funciona"
+      title="Catálogo de imóveis no Meta Ads — do seu CRM para campanhas escaláveis"
+      subtitle="A Imoblist importa seu estoque, gera o arquivo no padrão exigido pela Meta e mantém tudo sincronizado diariamente."
+    >
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="h3">1) Importação do seu CRM</h3>
+          <p>
+            Você não precisa trocar de sistema. Nós puxamos seus imóveis e acompanhamos mudanças
+            automaticamente.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="h3">2) Catálogo no padrão Meta</h3>
+          <p>
+            Geramos o feed dentro dos parâmetros exigidos e apoiamos a criação do catálogo na conta
+            Meta da imobiliária.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="h3">3) Anúncios dinâmicos</h3>
+          <p>
+            Sem precisar criar criativos: a Meta usa templates e permite destacar informações como
+            valor, descrição e bairro.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <Button href={wa} variant="whatsapp" target="_blank">Falar no WhatsApp</Button>
+        <Button href="#contato" variant="primary">Quero uma demo</Button>
+      </div>
+    </Section>
+
+    <Section
+      id="segmentacoes"
+      class="section section--alt"
+      eyebrow="Segmentações"
+      title="Conjuntos de anúncios do jeito que o marketing precisa"
+      subtitle="O catálogo vem com todos os imóveis (venda e locação), mas você pode segmentar por estratégia: tipo, bairro, faixa de valor e muito mais."
+    >
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="h3">Venda / Locação</h3>
+          <p>Crie conjuntos específicos e deixe a Meta otimizar a verba conforme performance.</p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Por tipo e região</h3>
+          <p>Apartamentos, casas, por bairro… segmentações alinhadas à campanha.</p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Por faixa de valor</h3>
+          <p>Direcione esforço para o perfil de imóvel que você quer acelerar.</p>
+        </div>
+      </div>
+    </Section>
+
+    <Section
+      id="landing-pages"
+      eyebrow="Conversão"
+      title="Landing pages por imóvel (rápidas) para qualificar e converter"
+      subtitle="Em anúncios com catálogo, a Meta exige enviar para a página do produto. Nossa solução cria uma LP para cada imóvel, no subdomínio do cliente, com identidade visual configurável."
+    >
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="h3">Subdomínio do cliente</h3>
+          <p>Tráfego contabilizado para o cliente — não para nós.</p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Integração de leads</h3>
+          <p>Leads podem ir para o CRM via webhook, e WhatsApp direcionado para até 2 números.</p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Alta conversão</h3>
+          <p>LP focada em carregamento rápido e em filtrar/qualificar o lead.</p>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top: 14px;">
+        Exemplos: <a href="https://landingpage.imoblist.com/modelo/silvioiwata" target="_blank" rel="noopener noreferrer">silvioiwata</a>
+        • <a href="https://landingpage.imoblist.com/modelo/ingaville" target="_blank" rel="noopener noreferrer">ingaville</a>
+      </p>
+    </Section>
+
+    <Section
+      id="treinamento"
+      class="section section--alt"
+      eyebrow="Implantação"
+      title="Treinamento + operação com o seu time"
+      subtitle="A gestão de tráfego continua com o seu time. Nós treinamos como criar e usar o catálogo, e ajudamos com boas práticas para performance."
+    >
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="h3">Treinamento prático</h3>
+          <p>Criação do catálogo, uso no gerenciador de anúncios e possibilidades de anúncio.</p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Sem acesso à sua conta</h3>
+          <p>A Imoblist não precisa ter acesso à conta Meta da imobiliária para você operar.</p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Evolução contínua</h3>
+          <p>Melhorias constantes nas LPs e recomendações para aumentar conversão.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <Button href={wa} variant="whatsapp" target="_blank">Falar no WhatsApp</Button>
+        <Button href="#contato" variant="primary">Solicitar demonstração</Button>
+      </div>
+    </Section>
+
+    <Section
+      id="faq"
+      eyebrow="FAQ"
+      title="Por que não dá para usar WhatsApp como conversão no Catálogo?"
+      subtitle="A Meta não permite WhatsApp como local de conversão em anúncios com catálogo. Por isso, o clique precisa levar para a página do imóvel — e a LP vira parte crítica da estratégia."
+    >
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="h3">O que a Meta exige?</h3>
+          <p>Ao usar catálogos, o “Saiba mais” precisa direcionar para a página do produto (imóvel).</p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Como resolvemos?</h3>
+          <p>Criamos LPs por imóvel, rápidas e focadas em conversão, com identidade da imobiliária.</p>
+        </div>
+        <div class="card">
+          <h3 class="h3">E o WhatsApp?</h3>
+          <p>WhatsApp segue como canal comercial, mas não como “conversão do anúncio” do catálogo.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <Button href={wa} variant="whatsapp" target="_blank">Falar no WhatsApp</Button>
+        <Button href="#contato" variant="secondary">Solicitar demo</Button>
+      </div>
+    </Section>
+
+    <Section
+      id="contato"
+      class="section section--alt"
+      eyebrow="Contato"
+      title="Vamos colocar seu catálogo no ar"
+      subtitle="Preencha o formulário e a gente retorna. Se preferir, fale direto no WhatsApp."
+    >
+      <div class="grid-3" style="grid-template-columns: 1.2fr 0.8fr;">
+        <div class="card">
+          <form class="form" onsubmit="return false;" aria-label="Formulário de contato (placeholder)">
+            <div class="field">
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" autocomplete="name" placeholder="Seu nome" />
+            </div>
+            <div class="field">
+              <label for="empresa">Imobiliária</label>
+              <input id="empresa" name="empresa" placeholder="Nome da empresa" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com" />
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input id="telefone" name="telefone" autocomplete="tel" placeholder="(DD) 9xxxx-xxxx" />
+            </div>
+            <div class="field">
+              <label for="msg">Mensagem</label>
+              <textarea id="msg" name="msg" placeholder="Conte rapidamente o que você quer anunciar (venda, locação, região...)" />
+            </div>
+
+            <p class="muted" style="margin: 0; font-size: 0.9rem;">
+              O envio do formulário será conectado (webhook/mail) na próxima etapa. Por enquanto,
+              use o WhatsApp.
+            </p>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <Button href={wa} variant="whatsapp" target="_blank">Enviar via WhatsApp</Button>
+              <Button href={wa} variant="primary" target="_blank">Quero uma demo</Button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 class="h3">O que você recebe</h3>
+          <p>
+            Um setup completo: integração do estoque, suporte na criação do catálogo e uma estratégia
+            com landing pages por imóvel para maximizar conversão.
+          </p>
+          <div class="hero__actions">
+            <Button href={wa} variant="whatsapp" size="sm" target="_blank">WhatsApp</Button>
+            <Button href="#como-funciona" variant="secondary" size="sm">Ver detalhes</Button>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <div>
+          <strong>Imoblist</strong>
+          <div class="muted">Imoblist HUB — Integração Meta Ads</div>
+        </div>
+        <div class="muted">© {new Date().getFullYear()} Imoblist</div>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
