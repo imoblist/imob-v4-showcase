@@ -1,14 +1,55 @@
 :root {
-  /* Identidade (ajustar depois de extrair com mais precisão do portal) */
+  /*
+    Identidade visual (extraída do CSS do portal imoblist.com.br em 2026-02-06)
+
+    Fontes observadas:
+    - Nunito (base)
+    - Epilogue (títulos)
+    - Inter (números / UI)
+
+    Paleta observada (classes tailwind do portal):
+    - teal (tertiary-400): #1d8ba4
+    - orange (quaternary-400): #ef5a06
+    - teal-100-ish (botão/realces): #b6dce6
+    - teal-900-ish (texto sobre teal claro): #104e5e
+    - purple (quinary-400): #6c57be
+    - pink (senary-400): #ce5b98
+    - lilac (senary-600): #e4a3c6
+    - bg alt (tertiary-800): #fbfaff
+
+    Referência (para auditoria rápida):
+    curl -Ls https://imoblist.com.br | grep -oE "#[0-9a-fA-F]{6}" | sort | uniq
+  */
+
+  /* Brand tokens */
   --imob-teal: #1d8ba4;
+  --imob-teal-100: #b6dce6;
+  --imob-teal-900: #104e5e;
+
   --imob-orange: #ef5a06;
+  --imob-orange-600: #bb4604;
+  --imob-orange-200: #fbc9ae;
+
+  --imob-purple: #6c57be;
+  --imob-pink: #ce5b98;
+  --imob-lilac: #e4a3c6;
+
+  /* Neutral tokens (alinhado com a escala vista no portal) */
   --imob-ink: #0b0f14;
   --imob-muted: #495057;
-  --imob-bg: #ffffff;
+  --imob-gray-100: #f8f9fa;
+  --imob-gray-200: #e9ecef;
+  --imob-gray-300: #dee2e6;
+  --imob-gray-400: #ced4da;
+  --imob-gray-500: #adb5bd;
+  --imob-gray-700: #343a40;
 
+  --imob-bg: #ffffff;
+  --imob-bg-alt: #fbfaff;
+
+  /* Layout */
   --radius: 16px;
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
-
   --container: 1120px;
 }
 
@@ -84,7 +125,7 @@ a {
 }
 
 .section--alt {
-  background: #fbfaff;
+  background: var(--imob-bg-alt);
 }
 
 .section__header {
@@ -236,8 +277,8 @@ a {
   gap: 8px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(29, 139, 164, 0.1);
-  color: var(--imob-teal);
+  background: var(--imob-teal-100);
+  color: var(--imob-teal-900);
   font-weight: 700;
   font-size: 0.85rem;
 }
