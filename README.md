@@ -77,3 +77,11 @@ Se no futuro precisarmos de algo (analytics, endpoints de formulário, etc.), pr
 - [ ] Output dir `dist`
 - [ ] Domínio configurado + HTTPS ok
 - [ ] Autodeploy ligado
+
+## Favicon
+
+Geramos um `public/favicon.ico` (fallback de compatibilidade) a partir do SVG de marca.
+
+```bash
+./scripts/generate-favicon-ico.sh
+```
