@@ -27,12 +27,19 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
           <a href="#contato">Contato</a>
         </nav>
 
-        <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-          Menu
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          <span class="nav__toggleBars" aria-hidden="true"></span>
+          <span class="nav__toggleText">Menu</span>
         </button>
       </div>
 
-      <nav class="nav--mobile" aria-label="Navegação mobile">
+      <nav id="mobileNav" class="nav--mobile" aria-label="Navegação mobile">
         <a href="#como-funciona">Como funciona</a>
         <a href="#segmentacoes">Segmentações</a>
         <a href="#landing-pages">Landing pages</a>
@@ -451,8 +458,17 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
 
   <script>
     // Navbar mobile + sticky
+    const topbar = document.querySelector('.topbar');
     const toggle = document.querySelector('.nav__toggle');
     const mobileNav = document.querySelector('.nav--mobile');
+
+    function syncTopbarScrolled() {
+      const scrolled = window.scrollY > 8;
+      topbar?.classList.toggle('is-scrolled', scrolled);
+    }
+
+    syncTopbarScrolled();
+    window.addEventListener('scroll', syncTopbarScrolled, { passive: true });
 
     toggle?.addEventListener('click', () => {
       const isOpen = mobileNav?.classList.toggle('is-open');
@@ -465,6 +481,18 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
         mobileNav.classList.remove('is-open');
         toggle?.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+      if (!mobileNav?.classList.contains('is-open')) return;
+      const t = e.target;
+      const clickedInside =
+        (t instanceof HTMLElement && (t.closest('.topbar') || t.closest('.nav--mobile')));
+      if (!clickedInside) {
+        mobileNav.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      }
     });
   </script>
 </BaseLayout>

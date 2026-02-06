@@ -334,8 +334,14 @@ button.btn {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.78);
   border-bottom: 1px solid rgba(11, 15, 20, 0.08);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topbar.is-scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
 }
 
 .topbar__inner {
@@ -376,11 +382,43 @@ button.btn {
 
 .nav__toggle {
   display: none;
+  align-items: center;
+  gap: 10px;
   border-radius: 999px;
   border: 1px solid rgba(11, 15, 20, 0.18);
   padding: 10px 12px;
   background: white;
   font-weight: 800;
+}
+
+.nav__toggleBars {
+  width: 18px;
+  height: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.nav__toggleBars::before,
+.nav__toggleBars::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--imob-ink);
+  border-radius: 999px;
+}
+
+.nav__toggleBars::before {
+  top: 1px;
+}
+
+.nav__toggleBars::after {
+  bottom: 1px;
+}
+
+.nav__toggleText {
+  font-size: 0.92rem;
 }
 
 .nav--mobile {
