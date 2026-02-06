@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { site } from "../config/site";
 
 const { title = site.name, description = site.description } = Astro.props;
+const canonical = site.url ? new URL(Astro.url.pathname, site.url).toString() : undefined;
 ---
 <!doctype html>
 <html lang={site.locale}>
@@ -15,6 +16,22 @@ const { title = site.name, description = site.description } = Astro.props;
 
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    {canonical ? <link rel="canonical" href={canonical} /> : null}
+
+    <!-- OpenGraph / Twitter (SEO básico) -->
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical ? <meta property="og:url" content={canonical} /> : null}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="theme-color" content="#1d8ba4" />
 
     <!-- Fonts (observadas no portal imoblist.com.br: Nunito / Epilogue / Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

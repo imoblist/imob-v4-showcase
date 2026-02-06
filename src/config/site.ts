@@ -3,6 +3,11 @@ export const site = {
   description:
     'Integração de imóveis ao Meta Ads via Catálogo + landing pages por imóvel para alta conversão.',
   locale: 'pt-BR',
+
+  // URL pública do site (usada para canonical + OpenGraph). Pode ficar vazio em preview local.
+  // TODO (Lauro): definir a URL final (ex.: https://hub.imoblist.com.br)
+  url: '',
+
   // TODO (Lauro): informar número em formato internacional, ex: 5544999999999 (sem + e sem espaços)
   whatsappNumberE164Digits: '',
   // TODO (Lauro): definir mensagem padrão
