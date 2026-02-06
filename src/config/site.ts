@@ -23,6 +23,14 @@ export const site = {
   // PUBLIC_FORM_ENDPOINT_URL: endpoint HTTP(s) para receber POST JSON (ex.: https://api.seudominio.com/leads)
   // Deixe vazio para desabilitar envio (UI sugere WhatsApp como fallback).
   formEndpointUrl: env.PUBLIC_FORM_ENDPOINT_URL ?? '',
+
+  // Contato (footer)
+  portalUrl: 'https://imoblist.com.br',
+  contactEmail: 'contato@imoblist.com.br',
+  // TODO (Lauro): ajustar telefone quando definir
+  contactPhone: '',
+  // Endereço fiscal (placeholder): Evoa, Maringá-PR
+  contactAddress: 'Evoa — Maringá/PR',
 };
 
 export function buildWhatsAppLink(
