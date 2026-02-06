@@ -1,13 +1,28 @@
+const env = import.meta.env;
+
 export const site = {
   name: 'Imoblist',
   description:
     'Integração de imóveis ao Meta Ads via Catálogo + landing pages por imóvel para alta conversão.',
   locale: 'pt-BR',
-  // TODO (Lauro): informar número em formato internacional, ex: 5544999999999 (sem + e sem espaços)
-  whatsappNumberE164Digits: '',
-  // TODO (Lauro): definir mensagem padrão
+
+  // URL pública do site (usada para canonical + OpenGraph). Pode ficar vazio em preview local.
+  // TODO (Lauro): definir a URL final (ex.: https://hub.imoblist.com.br)
+  url: env.PUBLIC_SITE_URL ?? '',
+
+  // WhatsApp
+  // PUBLIC_WHATSAPP_NUMBER: número em formato internacional, somente dígitos (E.164), ex: 5544999999999
+  // Deixe vazio para desabilitar CTAs.
+  whatsappNumberE164Digits: env.PUBLIC_WHATSAPP_NUMBER ?? '',
+  // PUBLIC_WHATSAPP_DEFAULT_MESSAGE: mensagem padrão pré-preenchida no WhatsApp
   whatsappDefaultMessage:
+    env.PUBLIC_WHATSAPP_DEFAULT_MESSAGE ??
     'Olá! Tenho interesse no Imoblist HUB (Integração Meta Ads via Catálogo) e gostaria de uma demonstração.',
+
+  // Formulário
+  // PUBLIC_FORM_ENDPOINT_URL: endpoint HTTP(s) para receber POST JSON (ex.: https://api.seudominio.com/leads)
+  // Deixe vazio para desabilitar envio (UI sugere WhatsApp como fallback).
+  formEndpointUrl: env.PUBLIC_FORM_ENDPOINT_URL ?? '',
 };
 
 export function buildWhatsAppLink(

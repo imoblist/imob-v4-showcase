@@ -217,38 +217,140 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
     >
       <div class="grid-3" style="grid-template-columns: 1.2fr 0.8fr;">
         <div class="card">
-          <form class="form" onsubmit="return false;" aria-label="Formulário de contato (placeholder)">
+          <form id="leadForm" class="form" aria-label="Formulário de contato">
             <div class="field">
               <label for="nome">Nome</label>
-              <input id="nome" name="nome" autocomplete="name" placeholder="Seu nome" />
+              <input id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required />
             </div>
+
             <div class="field">
-              <label for="empresa">Imobiliária</label>
+              <label for="perfil">Você é</label>
+              <select id="perfil" name="perfil" required>
+                <option value="">Selecione…</option>
+                <option value="imobiliaria">Imobiliária</option>
+                <option value="corretor">Corretor(a)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="empresa">Imobiliária / Empresa</label>
               <input id="empresa" name="empresa" placeholder="Nome da empresa" />
             </div>
+
             <div class="field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com" />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="voce@empresa.com"
+                required
+              />
             </div>
+
             <div class="field">
               <label for="telefone">Telefone / WhatsApp</label>
-              <input id="telefone" name="telefone" autocomplete="tel" placeholder="(DD) 9xxxx-xxxx" />
+              <input
+                id="telefone"
+                name="telefone"
+                autocomplete="tel"
+                placeholder="(DD) 9xxxx-xxxx"
+                required
+              />
             </div>
+
             <div class="field">
               <label for="msg">Mensagem</label>
-              <textarea id="msg" name="msg" placeholder="Conte rapidamente o que você quer anunciar (venda, locação, região...)" />
+              <textarea
+                id="msg"
+                name="mensagem"
+                placeholder="Conte rapidamente o que você quer anunciar (venda, locação, região...)"
+                required
+              />
             </div>
 
-            <p class="muted" style="margin: 0; font-size: 0.9rem;">
-              O envio do formulário será conectado (webhook/mail) na próxima etapa. Por enquanto,
-              use o WhatsApp.
-            </p>
+            <!-- honeypot anti-spam -->
+            <div class="field" style="display:none;">
+              <label for="website">Website</label>
+              <input id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <p id="formHint" class="muted" style="margin: 0; font-size: 0.9rem;"></p>
 
             <div style="display:flex; gap:12px; flex-wrap:wrap;">
-              <Button href={wa} variant="whatsapp" target="_blank">Enviar via WhatsApp</Button>
-              <Button href={wa} variant="primary" target="_blank">Quero uma demo</Button>
+              <button id="submitBtn" class="btn btn--primary btn--md" type="submit">
+                Enviar formulário
+              </button>
+              <Button href={wa} variant="whatsapp" target="_blank">Falar no WhatsApp</Button>
             </div>
           </form>
+
+          <script define:vars={{
+            endpointUrl: site.formEndpointUrl,
+            waLink: wa,
+          }}>
+            const form = document.getElementById('leadForm');
+            const hint = document.getElementById('formHint');
+            const btn = document.getElementById('submitBtn');
+
+            function setHint(text, kind) {
+              hint.textContent = text;
+              hint.style.color = kind === 'error' ? '#fa3535' : (kind === 'success' ? '#2fcb5a' : '');
+            }
+
+            const hasEndpoint = Boolean(endpointUrl && endpointUrl.trim());
+            if (!hasEndpoint) {
+              btn.disabled = true;
+              btn.classList.add('btn--disabled');
+              setHint('Formulário ainda não está conectado. Use o WhatsApp por enquanto.', '');
+            } else {
+              setHint('Ao enviar, seus dados serão enviados com segurança para nosso sistema.', '');
+            }
+
+            form?.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              if (!hasEndpoint) return;
+
+              const fd = new FormData(form);
+              if (String(fd.get('website') || '')) return; // honeypot
+
+              const payload = {
+                nome: String(fd.get('nome') || ''),
+                perfil: String(fd.get('perfil') || ''), // imobiliaria|corretor
+                empresa: String(fd.get('empresa') || ''),
+                email: String(fd.get('email') || ''),
+                telefone: String(fd.get('telefone') || ''),
+                mensagem: String(fd.get('mensagem') || ''),
+              };
+
+              btn.disabled = true;
+              btn.textContent = 'Enviando…';
+              setHint('Enviando…', '');
+
+              try {
+                const res = await fetch(endpointUrl, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(payload),
+                });
+
+                if (!res.ok) {
+                  throw new Error(`HTTP ${res.status}`);
+                }
+
+                btn.textContent = 'Enviado!';
+                setHint('Recebido. Em breve entraremos em contato.', 'success');
+                form.reset();
+              } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Enviar formulário';
+                setHint('Não foi possível enviar agora. Pode falar com a gente no WhatsApp.', 'error');
+              }
+            });
+          </script>
         </div>
 
         <div class="card">
