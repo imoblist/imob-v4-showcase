@@ -14,6 +14,18 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
 <BaseLayout title="Imoblist HUB — Integração Meta Ads" description={site.description}>
   <header class="hero">
     <div class="container">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 12px 0;">
+        <a href="#" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+          <img src="/brand/logo.webp" alt="Imoblist" style="height:40px; width:auto;" />
+        </a>
+        <nav style="display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;">
+          <a class="muted" href="#como-funciona">Como funciona</a>
+          <a class="muted" href="#landing-pages">Landing pages</a>
+          <a class="muted" href="#faq">FAQ</a>
+          <a class="muted" href="#contato">Contato</a>
+        </nav>
+      </div>
+
       <div class="hero__grid">
         <div>
           <p class="badge">Imoblist HUB • Integração Meta Ads</p>
@@ -370,9 +382,9 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
 
   <footer class="footer">
     <div class="container">
-      <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
-        <div>
-          <strong>Imoblist</strong>
+      <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img src="/brand/logo-text.webp" alt="Imoblist" style="height:28px; width:auto;" />
           <div class="muted">Imoblist HUB — Integração Meta Ads</div>
         </div>
         <div class="muted">© {new Date().getFullYear()} Imoblist</div>
