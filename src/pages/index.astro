@@ -16,7 +16,7 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
     <div class="container">
       <div class="topbar__inner">
         <a class="brand" href="#top">
-          <img class="brand__logo" src="/brand/logo.webp" alt="Imoblist" />
+          <img class="brand__logo" src={`${import.meta.env.BASE_URL}brand/logo.webp`} alt="Imoblist" />
         </a>
 
         <nav class="nav" aria-label="Navegação">
@@ -86,7 +86,7 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
         </div>
 
         <aside class="hero__card">
-          <img class="illus" src="/illustrations/catalog.svg" alt="Ilustração: catálogo de imóveis" loading="lazy" />
+          <img class="illus" src={`${import.meta.env.BASE_URL}illustrations/catalog.svg`} alt="Ilustração: catálogo de imóveis" loading="lazy" />
           <h3 class="h3" style="margin-top:14px;">Para quem é</h3>
           <p>
             Imobiliárias que querem escalar anúncios com catálogo, mantendo a gestão de tráfego com
@@ -136,7 +136,7 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
       </div>
 
       <div style="margin-top: 18px;">
-        <img class="illus" src="/illustrations/landing.svg" alt="Ilustração: landing page de imóvel" loading="lazy" />
+        <img class="illus" src={`${import.meta.env.BASE_URL}illustrations/landing.svg`} alt="Ilustração: landing page de imóvel" loading="lazy" />
       </div>
 
       <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
@@ -218,7 +218,7 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
       </div>
 
       <div style="margin-top: 18px;">
-        <img class="illus" src="/illustrations/training.svg" alt="Ilustração: treinamento e operação" loading="lazy" />
+        <img class="illus" src={`${import.meta.env.BASE_URL}illustrations/training.svg`} alt="Ilustração: treinamento e operação" loading="lazy" />
       </div>
 
       <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
@@ -431,7 +431,7 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
     <div class="container">
       <div class="footer__grid">
         <div>
-          <img src="/brand/logo-text.webp" alt="Imoblist" style="height:28px; width:auto;" />
+          <img src={`${import.meta.env.BASE_URL}brand/logo-text.webp`} alt="Imoblist" style="height:28px; width:auto;" />
           <p class="muted" style="margin: 10px 0 0;">
             © {new Date().getFullYear()} Imoblist. Todos os direitos reservados.
           </p>
