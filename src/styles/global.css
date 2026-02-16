@@ -214,6 +214,48 @@ button.btn {
     );
 }
 
+.hero--dark {
+  padding: 46px 0 56px;
+  background:
+    radial-gradient(900px 520px at 15% 0%, rgba(29, 139, 164, 0.38), transparent 60%),
+    radial-gradient(720px 420px at 85% 0%, rgba(239, 90, 6, 0.30), transparent 55%),
+    linear-gradient(180deg, #0b0f14 0%, #0b0f14 55%, #ffffff 100%);
+  color: #fff;
+}
+
+.lead--onDark {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.badge--dark {
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.kpi--dark {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.kpi--dark .kpi__lbl {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.hero__card--dark {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: none;
+}
+
+.hero__card--dark p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.illus--dark {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.10);
+}
+
 .hero__grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -333,15 +375,15 @@ button.btn {
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.78);
-  border-bottom: 1px solid rgba(11, 15, 20, 0.08);
+  backdrop-filter: blur(12px);
+  background: rgba(11, 15, 20, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .topbar.is-scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  background: rgba(11, 15, 20, 0.92);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
 }
 
 .topbar__inner {
@@ -372,12 +414,26 @@ button.btn {
 
 .nav a {
   text-decoration: none;
-  font-weight: 700;
-  color: var(--imob-muted);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .nav a:hover {
-  color: var(--imob-ink);
+  color: #ffffff;
+}
+
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.nav__cta:hover {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .nav__toggle {
@@ -385,9 +441,10 @@ button.btn {
   align-items: center;
   gap: 10px;
   border-radius: 999px;
-  border: 1px solid rgba(11, 15, 20, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 10px 12px;
-  background: white;
+  background: rgba(255, 255, 255, 0.10);
+  color: #fff;
   font-weight: 800;
 }
 
@@ -405,7 +462,7 @@ button.btn {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--imob-ink);
+  background: #ffffff;
   border-radius: 999px;
 }
 
