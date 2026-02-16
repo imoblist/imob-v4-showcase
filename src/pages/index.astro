@@ -11,20 +11,26 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
 });
 ---
 
-<BaseLayout title="Imoblist HUB — Integração Meta Ads" description={site.description}>
+<BaseLayout title="Imoblist HUB — Integração Meta + Landing Pages" description={site.description}>
   <div class="topbar">
     <div class="container">
       <div class="topbar__inner">
-        <a class="brand" href="#top">
-          <img class="brand__logo" src={`${import.meta.env.BASE_URL}brand/logo.webp`} alt="Imoblist" />
+        <a class="brand" href="#top" aria-label="Imoblist HUB">
+          <img
+            class="brand__logo"
+            src={`${import.meta.env.BASE_URL}brand/hub-logo-white.png`}
+            alt="Imoblist HUB"
+          />
         </a>
 
         <nav class="nav" aria-label="Navegação">
+          <a href="#produtos">Produtos</a>
           <a href="#como-funciona">Como funciona</a>
           <a href="#segmentacoes">Segmentações</a>
           <a href="#landing-pages">Landing pages</a>
           <a href="#faq">FAQ</a>
           <a href="#contato">Contato</a>
+          <a class="nav__cta" href={wa} target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
         </nav>
 
         <button
@@ -40,27 +46,28 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
       </div>
 
       <nav id="mobileNav" class="nav--mobile" aria-label="Navegação mobile">
+        <a href="#produtos">Produtos</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="#segmentacoes">Segmentações</a>
         <a href="#landing-pages">Landing pages</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
+        <a href={wa} target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
       </nav>
     </div>
   </div>
 
-  <header id="top" class="hero">
+  <header id="top" class="hero hero--dark">
     <div class="container">
       <div class="hero__grid">
         <div>
-          <p class="badge">Imoblist HUB • Integração Meta Ads</p>
+          <p class="badge badge--dark">Imoblist HUB</p>
           <h1 class="h1">
-            Anúncios de imóveis no Meta Ads via Catálogo — com estoque sempre atualizado.
+            Integração Meta (Catálogo) + Landing Pages para vender e alugar mais.
           </h1>
-          <p class="lead">
-            Importamos seus imóveis do seu CRM (sem troca de sistema), geramos o catálogo no padrão
-            Meta e ajudamos seu time a rodar campanhas escaláveis. Para conversão, criamos landing
-            pages por imóvel — rápidas e focadas em lead.
+          <p class="lead lead--onDark">
+            Dois produtos no mesmo ecossistema: <strong>Integração Meta</strong> para anúncios dinâmicos com catálogo e
+            <strong>Landing Pages</strong> rápidas para conversão. Tudo conectado ao seu CRM — sem troca de sistema.
           </p>
 
           <div class="hero__actions">
@@ -70,23 +77,23 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
           </div>
 
           <div class="kpis">
-            <div class="kpi">
-              <div class="kpi__num">100 → 5000+</div>
-              <div class="kpi__lbl">imóveis no catálogo, automatizado</div>
+            <div class="kpi kpi--dark">
+              <div class="kpi__num">Catálogo dinâmico</div>
+              <div class="kpi__lbl">estoque sincronizado e pronto para campanhas escaláveis</div>
             </div>
-            <div class="kpi">
-              <div class="kpi__num">Atualização diária</div>
-              <div class="kpi__lbl">novos, alterados e baixados</div>
+            <div class="kpi kpi--dark">
+              <div class="kpi__num">LP por imóvel</div>
+              <div class="kpi__lbl">página rápida, focada em lead e qualificação</div>
             </div>
-            <div class="kpi">
-              <div class="kpi__num">Sem criativos</div>
-              <div class="kpi__lbl">template dinâmico da Meta (valor/bairro)</div>
+            <div class="kpi kpi--dark">
+              <div class="kpi__num">Operação com seu time</div>
+              <div class="kpi__lbl">treinamento + boas práticas para rodar com autonomia</div>
             </div>
           </div>
         </div>
 
-        <aside class="hero__card">
-          <img class="illus" src={`${import.meta.env.BASE_URL}illustrations/catalog.svg`} alt="Ilustração: catálogo de imóveis" loading="lazy" />
+        <aside class="hero__card hero__card--dark">
+          <img class="illus illus--dark" src={`${import.meta.env.BASE_URL}illustrations/catalog.svg`} alt="Ilustração: catálogo de imóveis" loading="lazy" />
           <h3 class="h3" style="margin-top:14px;">Para quem é</h3>
           <p>
             Imobiliárias que querem escalar anúncios com catálogo, mantendo a gestão de tráfego com
@@ -94,7 +101,7 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
           </p>
           <div class="hero__actions">
             <Button href={wa} variant="whatsapp" size="sm" target="_blank">WhatsApp</Button>
-            <Button href="#contato" variant="secondary" size="sm">Solicitar demo</Button>
+            <Button href="#produtos" variant="secondary" size="sm">Ver produtos</Button>
           </div>
           <p class="muted" style="margin-top:10px; font-size:0.9rem;">
             Nota: número do WhatsApp será configurado quando definido.
@@ -106,10 +113,47 @@ const wa = buildWhatsAppLink(site.whatsappNumberE164Digits, site.whatsappDefault
 
   <main>
     <Section
+      id="produtos"
+      eyebrow="Produtos"
+      title="Imoblist HUB: dois produtos, um objetivo — mais leads"
+      subtitle="Escolha apenas um ou use os dois juntos. A Integração Meta faz o catálogo rodar no Meta Ads; as Landing Pages garantem a conversão com página rápida e focada."
+    >
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="h3">Integração Meta (Catálogo)</h3>
+          <p>
+            Conectamos seu estoque ao catálogo no padrão Meta, com atualização automática e suporte
+            para colocar campanhas de anúncios dinâmicos no ar.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Landing Pages</h3>
+          <p>
+            Páginas rápidas por imóvel (ou por campanha), com identidade configurável e captação de
+            leads via formulário + WhatsApp.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="h3">Implantação + treinamento</h3>
+          <p>
+            Seu time opera. A gente implanta, treina e entrega um playbook de boas práticas para
+            performance e conversão.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <Button href={wa} variant="whatsapp" target="_blank">Falar no WhatsApp</Button>
+        <Button href="#contato" variant="primary">Quero uma demonstração</Button>
+      </div>
+    </Section>
+
+    <Section
       id="como-funciona"
+      class="section section--alt"
       eyebrow="Como funciona"
-      title="Catálogo de imóveis no Meta Ads — do seu CRM para campanhas escaláveis"
-      subtitle="A Imoblist importa seu estoque, gera o arquivo no padrão exigido pela Meta e mantém tudo sincronizado diariamente."
+      title="Integração Meta — do seu CRM para campanhas escaláveis"
+      subtitle="Importamos seu estoque, geramos o feed no padrão exigido pela Meta e mantemos tudo sincronizado."
     >
       <div class="grid-3">
         <div class="card">

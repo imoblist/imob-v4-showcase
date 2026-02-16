@@ -1,9 +1,9 @@
 const env = import.meta.env;
 
 export const site = {
-  name: 'Imoblist',
+  name: 'Imoblist HUB',
   description:
-    'Integração de imóveis ao Meta Ads via Catálogo + landing pages por imóvel para alta conversão.',
+    'Integração Meta (Catálogo/Anúncios dinâmicos) + Landing Pages para alta conversão.',
   locale: 'pt-BR',
 
   // URL pública do site (usada para canonical + OpenGraph). Pode ficar vazio em preview local.
