@@ -29,8 +29,9 @@ export const site = {
   contactEmail: 'contato@imoblist.com.br',
   // TODO (Lauro): ajustar telefone quando definir
   contactPhone: '',
-  // Endereço fiscal (placeholder): Evoa, Maringá-PR
-  contactAddress: 'Evoa — Maringá/PR',
+  // Endereço fiscal / escritório
+  contactAddress:
+    'Átrium Centro Empresarial — Torre Norte • Av. Bento Munhoz da Rocha Neto, 632 • 19º andar (salas 1905 a 1908) • Zona 7 • Maringá/PR • CEP 87030-010',
 };
 
 export function buildWhatsAppLink(
