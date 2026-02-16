@@ -47,6 +47,12 @@
   --imob-bg: #ffffff;
   --imob-bg-alt: #fbfaff;
 
+  /* HUB theme helpers (logo is grayscale; we use Imoblist teal as accent) */
+  --hub-dark: #0b0f14;
+  --hub-dark-2: #0f1720;
+  --hub-accent: var(--imob-teal);
+  --hub-accent-soft: rgba(29, 139, 164, 0.18);
+
   /* Layout */
   --radius: 16px;
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
@@ -164,13 +170,13 @@ button.btn {
 }
 
 .btn--primary {
-  background: var(--imob-ink);
-  color: white;
-  border-color: var(--imob-ink);
+  background: var(--hub-accent);
+  color: #ffffff;
+  border-color: var(--hub-accent);
 }
 
 .btn--primary:hover {
-  opacity: 0.85;
+  filter: brightness(0.95);
 }
 
 .btn--secondary {
@@ -217,9 +223,9 @@ button.btn {
 .hero--dark {
   padding: 44px 0 48px;
   background:
-    radial-gradient(900px 520px at 15% 0%, rgba(29, 139, 164, 0.34), transparent 60%),
-    radial-gradient(720px 420px at 85% 0%, rgba(239, 90, 6, 0.26), transparent 55%),
-    #0b0f14;
+    radial-gradient(900px 520px at 15% 0%, rgba(29, 139, 164, 0.32), transparent 60%),
+    radial-gradient(720px 420px at 85% 0%, rgba(29, 139, 164, 0.20), transparent 55%),
+    var(--hub-dark);
   color: #fff;
 }
 
@@ -229,8 +235,9 @@ button.btn {
 }
 
 .badge--dark {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(29, 139, 164, 0.18);
   color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(29, 139, 164, 0.20);
 }
 
 .kpi--dark {
@@ -327,9 +334,9 @@ button.btn {
   gap: 8px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: var(--imob-teal-100);
-  color: var(--imob-teal-900);
-  font-weight: 700;
+  background: rgba(29, 139, 164, 0.16);
+  color: rgba(29, 139, 164, 0.98);
+  font-weight: 800;
   font-size: 0.85rem;
 }
 
@@ -385,6 +392,17 @@ button.btn {
 .topbar.is-scrolled {
   background: rgba(11, 15, 20, 0.92);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+}
+
+/* Better contrast when hero is dark */
+.hero--dark .btn--secondary {
+  background: rgba(255, 255, 255, 0.10);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.hero--dark .btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .topbar__inner {
