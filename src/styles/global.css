@@ -511,6 +511,14 @@ button.btn {
   align-items: start;
 }
 
+/* Contact section grid (form + side card) */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+  align-items: start;
+}
+
 .footer__links {
   display: grid;
   gap: 8px;
@@ -569,6 +577,15 @@ button.btn {
 
   .footer__grid {
     grid-template-columns: 1fr;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide side card on mobile as requested */
+  .card--desktopOnly {
+    display: none;
   }
 
   .section {
