@@ -215,16 +215,17 @@ button.btn {
 }
 
 .hero--dark {
-  padding: 46px 0 56px;
+  padding: 44px 0 48px;
   background:
-    radial-gradient(900px 520px at 15% 0%, rgba(29, 139, 164, 0.38), transparent 60%),
-    radial-gradient(720px 420px at 85% 0%, rgba(239, 90, 6, 0.30), transparent 55%),
-    linear-gradient(180deg, #0b0f14 0%, #0b0f14 55%, #ffffff 100%);
+    radial-gradient(900px 520px at 15% 0%, rgba(29, 139, 164, 0.34), transparent 60%),
+    radial-gradient(720px 420px at 85% 0%, rgba(239, 90, 6, 0.26), transparent 55%),
+    #0b0f14;
   color: #fff;
 }
 
 .lead--onDark {
   color: rgba(255, 255, 255, 0.78);
+  max-width: 58ch;
 }
 
 .badge--dark {
@@ -243,7 +244,7 @@ button.btn {
 
 .hero__card--dark {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: none;
 }
 
@@ -259,7 +260,7 @@ button.btn {
 .hero__grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 32px;
+  gap: 28px;
   align-items: center;
 }
 
@@ -280,13 +281,13 @@ button.btn {
 .kpis {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 22px;
+  gap: 12px;
+  margin-top: 18px;
 }
 
 .kpi {
   border-radius: 14px;
-  padding: 14px;
+  padding: 12px;
   background: #ffffff;
   border: 1px solid rgba(11, 15, 20, 0.06);
 }
@@ -294,7 +295,7 @@ button.btn {
 .kpi__num {
   font-family: Inter, Nunito, system-ui, sans-serif;
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
 }
 
 .kpi__lbl {
@@ -376,7 +377,7 @@ button.btn {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(12px);
-  background: rgba(11, 15, 20, 0.55);
+  background: rgba(11, 15, 20, 0.66);
   border-bottom: 1px solid rgba(255, 255, 255, 0.10);
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
@@ -402,7 +403,7 @@ button.btn {
 }
 
 .brand__logo {
-  height: 56px; /* mais destaque */
+  height: 44px;
   width: auto;
 }
 
@@ -480,13 +481,19 @@ button.btn {
 
 .nav--mobile {
   display: none;
-  padding: 0 0 12px;
+  padding: 6px 0 12px;
 }
 
 .nav--mobile a {
   display: block;
-  padding: 10px 0;
-  border-top: 1px solid rgba(11, 15, 20, 0.06);
+  padding: 12px 0;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.nav--mobile a:hover {
+  color: #fff;
 }
 
 .illus {
@@ -522,6 +529,10 @@ button.btn {
     grid-template-columns: 1fr;
   }
 
+  .hero--dark {
+    padding: 34px 0 32px;
+  }
+
   .kpis {
     grid-template-columns: 1fr;
   }
@@ -535,7 +546,7 @@ button.btn {
   }
 
   .brand__logo {
-    height: 52px;
+    height: 38px;
   }
 
   .nav {
@@ -561,6 +572,22 @@ button.btn {
   }
 
   .section {
-    padding: 56px 0;
+    padding: 52px 0;
+  }
+}
+
+/* Improve proportions on very small screens */
+@media (max-width: 420px) {
+  .h1 {
+    font-size: 1.85rem;
+    line-height: 1.1;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .btn--md {
+    padding: 12px 16px;
   }
 }
