@@ -12,7 +12,6 @@ import { SegmentationShowcase } from './sections/SegmentationShowcase';
 import { HowItWorksSection } from './sections/HowItWorksSection';
 import { AdFormatsTabs } from './sections/AdFormatsTabs';
 import { AIIntelligenceSection } from './sections/AIIntelligenceSection';
-import { AlertRestrictionBox } from './sections/AlertRestrictionBox';
 import { LPHeroSolution } from './sections/LPHeroSolution';
 import { LPComparisonSection } from './sections/LPComparisonSection';
 import { LPFeaturesList } from './sections/LPFeaturesList';
@@ -34,7 +33,6 @@ export default function App() {
       <HowItWorksSection />
       <AdFormatsTabs />
       <AIIntelligenceSection />
-      <AlertRestrictionBox />
       <LPHeroSolution />
       <LPComparisonSection />
       <LPFeaturesList />

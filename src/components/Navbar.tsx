@@ -43,7 +43,7 @@ export function Navbar() {
           <div className="pointer-events-auto shrink-0">
             <a href="#" className="flex items-center gap-2">
               <img 
-                src="https://painel.lipplead.com/wp-content/uploads/2026/03/logo-imobilist-hub-2.svg" 
+                src="https://painel.lipplead.com/wp-content/uploads/2026/03/LogoImobilist-1-scaled.png" 
                 alt="Imoblist HUB Logo" 
                 className="h-8 md:h-10 w-auto object-contain"
                 referrerPolicy="no-referrer"

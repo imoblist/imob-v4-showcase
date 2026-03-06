@@ -39,18 +39,6 @@ export function IntegrationFlowSteps() {
             <p className="text-lg text-gray-400 leading-relaxed mb-4">
               Não há necessidade de trocar seu sistema CRM. Nós importamos os imóveis do mesmo, com atualizações diárias de novos itens cadastrados, alterados ou baixados.
             </p>
-            
-            <p className="text-sm text-blue-400 font-bold mb-8 bg-accent/10 inline-block px-4 py-2 rounded-lg border border-accent/20">
-              (Recomendado: acima de 100 imóveis e gestor de tráfego)
-            </p>
-            
-            <div className="mb-6">
-              <a href="#contact">
-                <ShinyButton className="hover:shadow-[0_0_30px_rgba(0,100,224,0.5)]">
-                  Quero Integrar Meu CRM
-                </ShinyButton>
-              </a>
-            </div>
 
             {/* Read More Toggle */}
             <button 
@@ -117,6 +105,18 @@ export function IntegrationFlowSteps() {
                     </motion.div>
                 )}
             </AnimatePresence>
+            
+            <p className="text-sm text-blue-400 font-bold mb-8 bg-accent/10 inline-block px-4 py-2 rounded-lg border border-accent/20">
+              (Recomendado: acima de 100 imóveis e gestor de tráfego)
+            </p>
+            
+            <div className="mb-6">
+              <a href="#contact">
+                <ShinyButton className="hover:shadow-[0_0_30px_rgba(0,100,224,0.5)]">
+                  Quero Integrar Meu CRM
+                </ShinyButton>
+              </a>
+            </div>
           </motion.div>
 
           {/* Empty column to maintain grid structure on desktop, content removed as requested */}

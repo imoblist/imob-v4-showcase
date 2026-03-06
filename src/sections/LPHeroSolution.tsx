@@ -70,9 +70,6 @@ export function LPHeroSolution() {
                       Podem ser utilizadas nas campanhas de anúncios Meta e também em outras aplicações (vinculadas a outros tipos de anúncios, placas dos imóveis, usadas no dia a dia dos corretores para compartilhamentos etc).
                     </p>
                     <p>
-                      Tratando de Meta ADS, quando os anúncios são feitos por catálogo não é permitido usar Whatsapp como local de conversão, sendo a melhor opção o direcionamento para a página do imóvel, ocorre que os sites das imobiliárias nem sempre estão preparados para receber o usuário das redes sociais, pois a página precisa ser rápida, objetiva e da alta conversão, com imagens, textos e CTAs colocados de forma estratégica para maximizar a conversão.
-                    </p>
-                    <p>
                       Nós também criamos uma forma de utilizar o domínio principal de nossos clientes ao invés do nosso (exemplo - landingpage.nomedaimobiliaria.com.br).
                     </p>
                     

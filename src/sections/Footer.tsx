@@ -7,7 +7,7 @@ export function Footer() {
         {/* Column 1: Brand */}
         <div className="flex flex-col items-center md:items-start gap-6">
           <img 
-            src="https://painel.lipplead.com/wp-content/uploads/2026/03/logo-imobilist-hub-2.svg" 
+            src="https://painel.lipplead.com/wp-content/uploads/2026/03/LogoImobilist-1-scaled.png" 
             alt="Imoblist HUB Logo" 
             className="h-10 w-auto object-contain"
             referrerPolicy="no-referrer"
@@ -52,7 +52,7 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-        <p>Direitos da Imoblist</p>
+        <p>© 2026 Todos os direitos reservados - Imoblist</p>
         <a href="https://www.imoblist.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
           www.imoblist.com.br
         </a>
