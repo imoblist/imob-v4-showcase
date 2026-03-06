@@ -48,7 +48,7 @@ input, textarea { font-family: inherit; }
 }
 .navbar.scrolled { padding-top: 0.5rem; padding-bottom: 0.5rem; }
 .navbar > * { pointer-events: auto; }
-.navbar-logo img { height: 1.5rem; width: auto; object-fit: contain; }
+img.navbar-logo { height: 1.5rem; width: auto; object-fit: contain; }
 .navbar-nav {
   display: none; position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
@@ -684,7 +684,7 @@ input, textarea { font-family: inherit; }
 
 /* === RESPONSIVE === */
 @media (min-width: 768px) {
-  .navbar-logo img { height: 1.75rem; }
+  img.navbar-logo { height: 1.75rem; }
   .back-to-top-desktop { display: flex !important; }
   .back-to-top-mobile { display: none !important; }
   .navbar-nav { display: block; }
