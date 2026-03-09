@@ -1,11 +1,11 @@
 {
   "name": "imob-v4-showcase",
   "private": true,
-  "version": "1.0.9",
+  "version": "1.0.10",
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "npm run clean && VITE_APP_VERSION=$npm_package_version VITE_BUILD_TIME=\"$(date '+%Y-%m-%d %H:%M')\" vite build --outDir docs && cp CNAME docs/CNAME",
+    "build": "npm run clean && rm -rf public/assets && mkdir -p public/assets && cp -r assets/. public/assets/ && VITE_APP_VERSION=$npm_package_version VITE_BUILD_TIME=\"$(date '+%Y-%m-%d %H:%M')\" vite build --outDir docs && cp CNAME docs/CNAME",
     "preview": "vite preview",
     "clean": "rm -rf dist docs",
     "lint": "tsc --noEmit"

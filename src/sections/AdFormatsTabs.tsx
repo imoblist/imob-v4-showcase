@@ -74,7 +74,7 @@ export function AdFormatsTabs() {
               </AnimatePresence>
             </div>
           </div>
-          <p className="text-[10px] text-gray-600 mt-4 text-center">*Imagem de anúncio meramente ilustrativa</p>
+          <p className="text-xs text-gray-400 mt-3 text-center font-medium">*Imagem de anúncio meramente ilustrativa</p>
         </div>
 
       </div>

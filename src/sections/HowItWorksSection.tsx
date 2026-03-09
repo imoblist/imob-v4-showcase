@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { CheckCircle2 } from 'lucide-react';
+import { AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { ShinyButton } from '@/components/ui/shiny-button';
 
 export function HowItWorksSection() {
@@ -57,10 +57,15 @@ export function HowItWorksSection() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-white/10 bg-secondary/40 backdrop-blur-sm p-8"
+            className="rounded-2xl border border-white/10 bg-secondary/30 backdrop-blur-sm p-6 md:p-7"
           >
-            <h3 className="text-3xl font-bold text-accent mb-6">Regra da Meta para local de conversão</h3>
-            <p className="text-gray-200 text-2xl leading-relaxed">
+            <div className="flex items-start gap-3 mb-4">
+              <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/30 flex items-center justify-center text-accent shrink-0">
+                <AlertTriangle size={18} />
+              </div>
+              <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight">Regra da Meta para local de conversão</h3>
+            </div>
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed">
               Ao utilizar catálogos a Meta não permite usar Whatsapp como local de conversão. Quando alguém clicar em um anúncio precisa ser direcionada para a página do imóvel correspondente.
             </p>
           </motion.div>
