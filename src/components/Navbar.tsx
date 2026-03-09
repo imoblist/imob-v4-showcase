@@ -40,12 +40,12 @@ export function Navbar() {
       >
         <div className="w-full max-w-7xl flex items-center justify-between relative gap-4">
           {/* Logo - Left */}
-          <div className="pointer-events-auto shrink-0">
+          <div className="pointer-events-auto shrink-0 flex items-center h-full">
             <a href="#" className="flex items-center gap-2">
               <img 
                 src="https://painel.lipplead.com/wp-content/uploads/2026/03/LogoImobilist-1-scaled.png" 
                 alt="Imoblist HUB Logo" 
-                className="h-8 md:h-10 w-auto object-contain"
+                className="h-6 sm:h-8 md:h-10 lg:h-12 max-w-[120px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] w-auto object-contain transition-all duration-300"
                 referrerPolicy="no-referrer"
               />
             </a>
