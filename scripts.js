@@ -41,8 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // === READ MORE / READ LESS TOGGLES ===
   document.querySelectorAll('.read-more-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const content = btn.parentElement.querySelector('.read-more-content') || btn.nextElementSibling;
+      // Find the correct associated content block for this specific button
+      let content = null;
+      let sibling = btn.nextElementSibling;
+      while (sibling) {
+        if (sibling.classList && sibling.classList.contains('read-more-content')) {
+          content = sibling;
+          break;
+        }
+        sibling = sibling.nextElementSibling;
+      }
+
+      if (!content && btn.parentElement) {
+        content = btn.parentElement.querySelector('.read-more-content');
+      }
       if (!content) return;
+
       const isOpen = content.classList.toggle('open');
       const label = btn.querySelector('.rm-label');
       const chevDown = btn.querySelector('.chevron-down');
