@@ -132,14 +132,14 @@ export function LPFeaturesList() {
               className="relative z-10 flex flex-col items-center w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px]"
             >
               <img 
-                src="https://painel.lipplead.com/wp-content/uploads/2026/03/imagem20celular20dois_converted.webp" 
+                src="/assets/imagem-celular-dois.webp" 
                 alt="Mobile Landing Page Preview" 
                 className="w-full h-auto object-contain drop-shadow-2xl z-20"
                 referrerPolicy="no-referrer"
               />
               {/* Glow effect behind phone */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-accent/20 blur-[100px] z-0 rounded-full pointer-events-none" />
-              <p className="text-[10px] text-gray-500 mt-6 text-center z-20 w-full font-medium">*Imagem de anúncio meramente ilustrativa</p>
+              <p className="text-xs text-gray-400 mt-6 text-center z-20 w-full font-medium">*Imagem de anúncio meramente ilustrativa</p>
             </motion.div>
           </div>
 

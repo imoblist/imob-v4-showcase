@@ -17,7 +17,7 @@ export function HowItWorksSection() {
 
   return (
     <section className="py-24 px-6 bg-background relative overflow-hidden">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* Main Title */}
         <motion.div
@@ -26,13 +26,11 @@ export function HowItWorksSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Como funciona?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Como funciona?</h2>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
         </motion.div>
 
-        <div className="max-w-3xl mx-auto mb-16">
-
-          {/* Process Steps */}
+        <div className="grid lg:grid-cols-2 gap-10 items-start mb-16">
           <div className="space-y-8">
             {steps.map((step, index) => (
               <motion.div
@@ -44,8 +42,8 @@ export function HowItWorksSection() {
                 className="flex gap-4"
               >
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-accent">
-                    <CheckCircle2 size={20} />
+                  <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center text-accent">
+                    <CheckCircle2 size={18} />
                   </div>
                 </div>
                 <p className="text-lg text-gray-300 leading-relaxed">
@@ -55,6 +53,17 @@ export function HowItWorksSection() {
             ))}
           </div>
 
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-white/10 bg-secondary/40 backdrop-blur-sm p-8"
+          >
+            <h3 className="text-3xl font-bold text-accent mb-6">Regra da Meta para local de conversão</h3>
+            <p className="text-gray-200 text-2xl leading-relaxed">
+              Ao utilizar catálogos a Meta não permite usar Whatsapp como local de conversão. Quando alguém clicar em um anúncio precisa ser direcionada para a página do imóvel correspondente.
+            </p>
+          </motion.div>
         </div>
 
         <div className="flex justify-center">

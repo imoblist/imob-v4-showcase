@@ -14,9 +14,9 @@ export function IntegrationFlowSteps() {
       {/* Background Images */}
       <div className="absolute inset-0 z-0">
         <picture>
-          <source media="(min-width: 768px)" srcSet="https://painel.lipplead.com/wp-content/uploads/2026/02/fundo20120pc_converted-9.webp" />
+          <source media="(min-width: 768px)" srcSet="/assets/fundo-pc.webp" />
           <img 
-            src="https://painel.lipplead.com/wp-content/uploads/2026/02/fundo20120celular_converted-9.webp" 
+            src="/assets/fundo-mobile.webp" 
             alt="Background" 
             className="w-full h-full object-cover"
           />

@@ -10,7 +10,7 @@ export function Footer() {
         {/* Column 1: Brand */}
         <div className="flex flex-col items-center md:items-start gap-6">
           <img 
-            src="https://painel.lipplead.com/wp-content/uploads/2026/03/LogoImobilist-1-scaled.png" 
+            src="/assets/footer-logo.svg" 
             alt="Imoblist HUB Logo" 
             className="h-10 w-auto object-contain"
             referrerPolicy="no-referrer"

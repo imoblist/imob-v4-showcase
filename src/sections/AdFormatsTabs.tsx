@@ -11,9 +11,9 @@ const tabs = [
 ];
 
 const tabImages: Record<string, string> = {
-  single: 'https://painel.lipplead.com/wp-content/uploads/2026/03/imagem20unica_converted.webp',
-  carousel: 'https://painel.lipplead.com/wp-content/uploads/2026/03/imagem20carrossel_converted.webp',
-  collection: 'https://painel.lipplead.com/wp-content/uploads/2026/03/carrossel_converted.webp',
+  single: '/assets/imagem-unica.webp',
+  carousel: '/assets/imagem-carrossel.webp',
+  collection: '/assets/carrossel.webp',
 };
 
 export function AdFormatsTabs() {

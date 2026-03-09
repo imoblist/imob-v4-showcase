@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ShinyButton } from '@/components/ui/shiny-button';
 
 export function LPHeroSolution() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -45,7 +46,7 @@ export function LPHeroSolution() {
               onClick={() => setIsExpanded(!isExpanded)}
               className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors duration-200 font-medium text-lg group"
             >
-              Ler mais
+              {isExpanded ? 'Ler menos' : 'Ler mais'}
               {isExpanded ? (
                 <ChevronUp className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
               ) : (
@@ -74,11 +75,8 @@ export function LPHeroSolution() {
                     </p>
                     
                     <div className="pt-4">
-                      <a 
-                        href="#contact" 
-                        className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-accent hover:bg-accent/90 rounded-full transition-colors duration-200 shadow-[0_0_20px_rgba(0,100,224,0.3)] hover:shadow-[0_0_30px_rgba(0,100,224,0.5)]"
-                      >
-                        Tenho Interesse
+                      <a href="#contact">
+                        <ShinyButton className="px-8 py-3 text-base">Tenho Interesse</ShinyButton>
                       </a>
                     </div>
                   </div>
@@ -91,12 +89,12 @@ export function LPHeroSolution() {
         {/* Image */}
         <div className="order-2 lg:order-2 w-full flex flex-col items-center justify-center">
           <img 
-            src="https://painel.lipplead.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-03-at-09.55.08.jpeg" 
+            src="/assets/landing-page.jpeg" 
             alt="Criador de Landing Pages" 
             className="w-full max-w-xs rounded-2xl shadow-2xl border border-white/10"
             referrerPolicy="no-referrer"
           />
-          <p className="text-[10px] text-gray-600 mt-2 text-center">*Imagem de anúncio meramente ilustrativa</p>
+          <p className="text-xs text-gray-400 mt-3 text-center font-medium">*Imagem de anúncio meramente ilustrativa</p>
         </div>
 
       </div>
