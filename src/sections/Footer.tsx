@@ -43,9 +43,15 @@ export function Footer() {
              <p>32.253.725/0001-88</p>
            </div>
 
-           <div className="space-y-1 mt-2">
+           <div className="space-y-1 mt-2 text-center md:text-left flex flex-col items-center md:items-start">
              <p>Imoblist Ltda</p>
              <p>Maringá - PR</p>
+             <a 
+               href="#hero_section" 
+               className="md:hidden inline-block mt-4 text-accent hover:text-blue-400 transition-colors text-sm font-medium"
+             >
+               Voltar para o início
+             </a>
            </div>
         </div>
       </div>

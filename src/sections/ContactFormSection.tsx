@@ -82,7 +82,7 @@ export function ContactFormSection() {
               />
             </div>
 
-            <div className="pt-4 flex justify-center">
+            <div className="pt-4 flex flex-col items-center gap-6">
               <ShinyButton 
                 type="submit" 
                 disabled={isLoading}
@@ -90,6 +90,13 @@ export function ContactFormSection() {
               >
                 {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
               </ShinyButton>
+              
+              <a 
+                href="#hero_section" 
+                className="hidden md:inline-block text-accent hover:text-blue-400 transition-colors text-sm font-medium"
+              >
+                Voltar para o início
+              </a>
             </div>
           </form>
         </motion.div>
