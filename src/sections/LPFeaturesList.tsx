@@ -100,65 +100,65 @@ export function LPFeaturesList() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Configuradas para a sua marca</h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center w-full">
           
           {/* Left Column */}
-          <div className="space-y-12 order-2 lg:order-1">
+          <div className="space-y-12 order-2 lg:order-1 flex flex-col justify-center w-full">
             {featuresLeft.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="flex flex-col lg:items-end text-center lg:text-right group"
+                className="flex flex-col items-center lg:items-end text-center lg:text-right group px-4 lg:px-0"
               >
                 <div className="mb-4 shrink-0 w-16 h-16 rounded-2xl bg-background/50 backdrop-blur-md shadow-inner border border-white/5 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-300">
                   <WireframeIcon type={feature.type} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed max-w-sm ml-auto">{feature.description}</p>
+                  <p className="text-gray-400 leading-relaxed max-w-sm lg:ml-auto">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
           {/* Center Column - Image */}
-          <div className="order-1 lg:order-2 flex justify-center py-8 lg:py-0">
+          <div className="order-1 lg:order-2 flex flex-col justify-center items-center w-full relative pt-8 lg:pt-0 pb-8 lg:pb-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="relative z-10 w-full max-w-[300px] lg:max-w-full"
+              className="relative z-10 flex flex-col items-center w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px]"
             >
               <img 
                 src="https://painel.lipplead.com/wp-content/uploads/2026/03/imagem20celular20dois_converted.webp" 
                 alt="Mobile Landing Page Preview" 
-                className="w-full h-auto object-contain drop-shadow-2xl"
+                className="w-full h-auto object-contain drop-shadow-2xl z-20"
                 referrerPolicy="no-referrer"
               />
               {/* Glow effect behind phone */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-accent/20 blur-[100px] -z-10 rounded-full" />
-              <p className="text-[10px] text-gray-600 mt-4 text-center relative z-20">*Imagem de anúncio meramente ilustrativa</p>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-accent/20 blur-[100px] z-0 rounded-full pointer-events-none" />
+              <p className="text-[10px] text-gray-500 mt-6 text-center z-20 w-full font-medium">*Imagem de anúncio meramente ilustrativa</p>
             </motion.div>
           </div>
 
           {/* Right Column */}
-          <div className="space-y-12 order-3">
+          <div className="space-y-12 order-3 lg:order-3 flex flex-col justify-center w-full">
             {featuresRight.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className="flex flex-col lg:items-start text-center lg:text-left group"
+                className="flex flex-col items-center lg:items-start text-center lg:text-left group px-4 lg:px-0"
               >
                 <div className="mb-4 shrink-0 w-16 h-16 rounded-2xl bg-background/50 backdrop-blur-md shadow-inner border border-white/5 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-300">
                   <WireframeIcon type={feature.type} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed max-w-sm mr-auto">{feature.description}</p>
+                  <p className="text-gray-400 leading-relaxed max-w-sm lg:mr-auto">{feature.description}</p>
                 </div>
               </motion.div>
             ))}

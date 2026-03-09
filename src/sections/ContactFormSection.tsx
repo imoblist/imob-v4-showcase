@@ -10,7 +10,7 @@ export function ContactFormSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsLoading(false);
@@ -41,20 +41,20 @@ export function ContactFormSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Nome *</label>
-                <input 
-                  type="text" 
-                  id="name" 
+                <input
+                  type="text"
+                  id="name"
                   required
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   placeholder="Seu nome completo"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-300 mb-2">WhatsApp *</label>
-                <input 
-                  type="tel" 
-                  id="whatsapp" 
+                <input
+                  type="tel"
+                  id="whatsapp"
                   required
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   placeholder="(00) 00000-0000"
@@ -64,9 +64,9 @@ export function ContactFormSection() {
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">E-mail</label>
-              <input 
-                type="email" 
-                id="email" 
+              <input
+                type="email"
+                id="email"
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                 placeholder="seu@email.com"
               />
@@ -74,8 +74,8 @@ export function ContactFormSection() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
-              <textarea 
-                id="message" 
+              <textarea
+                id="message"
                 rows={4}
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none"
                 placeholder="Como podemos ajudar?"
@@ -83,16 +83,16 @@ export function ContactFormSection() {
             </div>
 
             <div className="pt-4 flex flex-col items-center gap-6">
-              <ShinyButton 
-                type="submit" 
+              <ShinyButton
+                type="submit"
                 disabled={isLoading}
                 className="w-full md:w-auto px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
               </ShinyButton>
-              
-              <a 
-                href="#hero_section" 
+
+              <a
+                href="#hero_section"
                 className="hidden md:inline-block text-accent hover:text-blue-400 transition-colors text-sm font-medium"
               >
                 Voltar para o início
@@ -114,7 +114,7 @@ export function ContactFormSection() {
               onClick={() => setIsSubmitted(false)}
               className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             />
-            
+
             {/* Modal Content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -128,7 +128,7 @@ export function ContactFormSection() {
                 <div className="absolute bottom-[-50%] right-[-50%] w-full h-full bg-blue-500/10 blur-[100px] rounded-full" />
               </div>
 
-              <button 
+              <button
                 onClick={() => setIsSubmitted(false)}
                 className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
               >
@@ -139,7 +139,7 @@ export function ContactFormSection() {
                 <div className="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center text-accent border border-accent/20 shadow-[0_0_30px_rgba(0,100,224,0.3)]">
                   <CheckCircle2 size={40} />
                 </div>
-                
+
                 <div className="space-y-2">
                   <h3 className="text-2xl md:text-3xl font-bold text-white">Obrigado!</h3>
                   <p className="text-gray-300 text-lg">
@@ -150,7 +150,7 @@ export function ContactFormSection() {
                   </p>
                 </div>
 
-                <ShinyButton 
+                <ShinyButton
                   onClick={() => setIsSubmitted(false)}
                   className="mt-4 px-8 py-3 w-full"
                 >

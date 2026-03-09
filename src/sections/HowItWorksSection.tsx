@@ -18,9 +18,9 @@ export function HowItWorksSection() {
   return (
     <section className="py-24 px-6 bg-background relative overflow-hidden">
       <div className="max-w-5xl mx-auto">
-        
+
         {/* Main Title */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -31,11 +31,11 @@ export function HowItWorksSection() {
         </motion.div>
 
         <div className="max-w-3xl mx-auto mb-16">
-          
+
           {/* Process Steps */}
           <div className="space-y-8">
             {steps.map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
