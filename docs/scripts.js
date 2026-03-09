@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
       closeIcon.style.display = isOpen ? 'block' : 'none';
     });
 
-    // Close mobile menu on nav click
-    mobileMenu.querySelectorAll('.nav-item').forEach(item => {
-      item.addEventListener('click', () => {
+    // Close mobile menu on any menu link click (including CTA)
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
         menuIcon.style.display = 'block';
         closeIcon.style.display = 'none';

@@ -71,7 +71,7 @@ img.navbar-logo { height: 1.5rem; width: auto; object-fit: contain; }
 .nav-item.active svg { color: #60a5fa; }
 .nav-item svg { color: #6b7280; width: 16px; height: 16px; }
 .navbar-right { display: flex; align-items: center; gap: 1rem; }
-.navbar-cta-wrap { display: none; }
+.navbar-cta-wrap { display: block; }
 .mobile-menu-btn {
   color: white; padding: 0.5rem;
   background: rgba(30,30,30,0.8); border-radius: 9999px;
