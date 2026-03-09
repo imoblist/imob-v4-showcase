@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // === READ MORE / READ LESS TOGGLES ===
   document.querySelectorAll('.read-more-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const content = btn.nextElementSibling;
+      const content = btn.parentElement.querySelector('.read-more-content') || btn.nextElementSibling;
+      if (!content) return;
       const isOpen = content.classList.toggle('open');
       const label = btn.querySelector('.rm-label');
       const chevDown = btn.querySelector('.chevron-down');
