@@ -48,7 +48,7 @@ input, textarea { font-family: inherit; }
 }
 .navbar.scrolled { padding-top: 0.5rem; padding-bottom: 0.5rem; }
 .navbar > * { pointer-events: auto; }
-.navbar-logo img { height: 1.5rem; width: auto; object-fit: contain; }
+img.navbar-logo { height: 1.5rem; width: auto; object-fit: contain; }
 .navbar-nav {
   display: none; position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%);
@@ -682,9 +682,13 @@ input, textarea { font-family: inherit; }
 .footer-bottom a { transition: color 0.3s; }
 .footer-bottom a:hover { color: white; }
 
+/* Back to top - responsive visibility (Mobile First Defaults) */
+.back-to-top-mobile { display: flex !important; }
+.back-to-top-desktop { display: none !important; }
+
 /* === RESPONSIVE === */
 @media (min-width: 768px) {
-  .navbar-logo img { height: 1.75rem; }
+  img.navbar-logo { height: 1.75rem; }
   .back-to-top-desktop { display: flex !important; }
   .back-to-top-mobile { display: none !important; }
   .navbar-nav { display: block; }
@@ -715,6 +719,9 @@ input, textarea { font-family: inherit; }
   .feature-item.left p { margin-left: auto; }
   .feature-item.right { align-items: flex-start; text-align: left; }
   .feature-item.right p { margin-right: auto; }
+  .order-lg-1 { order: 1 !important; }
+  .order-lg-2 { order: 2 !important; }
+  .order-lg-3 { order: 3 !important; }
 }
 
 /* Particle animation placeholder (pure CSS particles) */
@@ -732,7 +739,3 @@ input, textarea { font-family: inherit; }
   90% { opacity: 0.8; }
   100% { transform: translateX(120%); opacity: 0; }
 }
-
-/* Back to top - responsive visibility */
-.back-to-top-mobile { display: flex !important; }
-.back-to-top-desktop { display: none !important; }
