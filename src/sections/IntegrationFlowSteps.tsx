@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShinyButton } from '@/components/ui/shiny-button';
-import { ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, ChevronUp, CheckCircle2, X } from 'lucide-react';
 
 export function IntegrationFlowSteps() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -58,7 +58,15 @@ export function IntegrationFlowSteps() {
                         exit={{ opacity: 0, height: 0 }}
                         className="overflow-hidden text-left"
                     >
-                        <div className="bg-secondary/80 backdrop-blur-md p-6 rounded-2xl border border-white/10 mt-4 space-y-6 shadow-2xl">
+                        <div className="relative bg-secondary/80 backdrop-blur-md p-6 rounded-2xl border border-white/10 mt-4 space-y-6 shadow-2xl">
+                            <button
+                                onClick={() => setIsExpanded(false)}
+                                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+                                aria-label="Fechar"
+                            >
+                                <X size={20} />
+                            </button>
+
                             <div>
                                 <h3 className="text-xl font-bold text-white">Imobiliárias, corretores e construtoras</h3>
                                 <p className="text-accent font-medium">Uma nova forma de anunciar seus imóveis!</p>
@@ -106,7 +114,7 @@ export function IntegrationFlowSteps() {
                 )}
             </AnimatePresence>
             
-            <p className="text-sm text-blue-400 font-bold mb-8 bg-accent/10 inline-block px-4 py-2 rounded-lg border border-accent/20">
+            <p className={`text-sm text-blue-400 font-bold mb-8 bg-accent/10 inline-block px-4 py-2 rounded-lg border border-accent/20 ${isExpanded ? 'mt-6' : ''}`}>
               (Recomendado: acima de 100 imóveis e gestor de tráfego)
             </p>
             

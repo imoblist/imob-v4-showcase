@@ -8,7 +8,7 @@ import { ShinyButton } from '@/components/ui/shiny-button';
 const navItems = [
   { name: 'Início', href: '#hero_section', icon: Home },
   { name: 'Integração Meta', href: '#how_it_works_integration', icon: Share2 },
-  { name: 'Landing pages', href: '#landing_page_features', icon: Layout },
+  { name: 'Landing pages', href: '#landing_pages_solution', icon: Layout },
   { name: 'Sobre nós', href: '#authority_and_cta', icon: Users },
   { name: 'Contato', href: '#contact', icon: Mail },
   { name: 'Faq', href: '#faq', icon: HelpCircle },

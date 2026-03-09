@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShinyButton } from '@/components/ui/shiny-button';
-import { CheckCircle2, X } from 'lucide-react';
+import { ArrowUp, CheckCircle2, X } from 'lucide-react';
 
 export function ContactFormSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -90,16 +90,21 @@ export function ContactFormSection() {
               >
                 {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
               </ShinyButton>
-
-              <a
-                href="#hero_section"
-                className="hidden md:inline-block text-accent hover:text-blue-400 transition-colors text-sm font-medium"
-              >
-                Voltar para o início
-              </a>
             </div>
           </form>
         </motion.div>
+
+        <div className="mt-14 flex justify-center">
+          <a
+            href="#hero_section"
+            className="group inline-flex flex-col items-center gap-3 text-gray-400 hover:text-white transition-colors duration-300"
+          >
+            <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/5 transition-all duration-300">
+              <ArrowUp size={22} className="group-hover:-translate-y-1 transition-transform duration-300" />
+            </div>
+            <span className="text-sm font-medium uppercase tracking-widest">Voltar ao topo</span>
+          </a>
+        </div>
       </div>
 
       {/* Success Popup Modal */}
