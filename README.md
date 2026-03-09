@@ -1,20 +1,44 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Imoblist HUB Showcase
 
-# Run and deploy your AI Studio app
+Landing page React/Vite com deploy estático em `docs/` para GitHub Pages.
 
-This contains everything you need to run your app locally.
+## Fluxo oficial (source-first)
 
-View your app in AI Studio: https://ai.studio/apps/305f097a-e928-49ce-b2e4-9d577d50f253
+1. Alterar código-fonte em `src/` (e assets em `assets/` quando necessário)
+2. Rodar build
+3. Publicar saída gerada em `docs/`
 
-## Run Locally
+> Não editar `docs/` manualmente. `docs/` é artefato de build.
 
-**Prerequisites:**  Node.js
+## Scripts
 
+- `npm run dev` — sobe ambiente local
+- `npm run build` — build de produção para `docs/`
+- `npm run preview` — preview local do build
+- `npm run clean` — limpa `dist/` e `docs/`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Build e deploy (GitHub Pages)
+
+```bash
+npm install
+npm run build
+```
+
+A build gera:
+- `docs/index.html`
+- `docs/assets/*` (bundles + imagens locais)
+- `docs/CNAME`
+
+No GitHub Pages, configurar a branch/pasta para servir de `docs/`.
+
+## Dependências externas mantidas por decisão
+
+- Google Fonts (`fonts.googleapis.com`)
+- Link institucional para `https://www.imoblist.com.br`
+- Script do Unicorn Studio (efeitos visuais)
+
+## JSONs do projeto
+
+- `public/unicorn-hero.json`: configuração do efeito visual do hero (em uso)
+- `tsconfig.json`: configuração TypeScript (em uso)
+- `package.json` / `package-lock.json`: configuração e lock de dependências (em uso)
