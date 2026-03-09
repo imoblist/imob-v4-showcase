@@ -1,23 +1,20 @@
-# Imoblist HUB Showcase
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-Site estático para publicação no GitHub Pages.
+# Run and deploy your AI Studio app
 
-## Estrutura
+This contains everything you need to run your app locally.
 
-- `index.html`
-- `styles.css`
-- `scripts.js`
-- `CNAME`
-- `docs/` (saída de deploy)
+View your app in AI Studio: https://ai.studio/apps/305f097a-e928-49ce-b2e4-9d577d50f253
 
-## Build para GitHub Pages
+## Run Locally
 
-```bash
-npm run build
-```
+**Prerequisites:**  Node.js
 
-O comando acima limpa e recria `docs/` com os arquivos estáticos prontos para publicação.
 
-## Publicação
-
-No GitHub, configure o Pages para servir da branch (`main` ou `dev-luna`) pasta `/docs`.
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
