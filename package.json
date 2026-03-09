@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "npm run clean && vite build --outDir docs && cp CNAME docs/CNAME",
+    "build": "npm run clean && mkdir -p docs && cp index.html styles.css scripts.js CNAME docs/ && node -e 'const fs=require(\"fs\");const p=\"docs/index.html\";const d=new Date();const pad=n=>String(n).padStart(2,\"0\");const stamp=d.getFullYear()+\"-\"+pad(d.getMonth()+1)+\"-\"+pad(d.getDate())+\" \"+pad(d.getHours())+\":\"+pad(d.getMinutes());fs.writeFileSync(p,fs.readFileSync(p,\"utf8\").replace(\"__BUILD_DATETIME__\",stamp));'",
     "preview": "vite preview",
     "clean": "rm -rf dist docs",
     "lint": "tsc --noEmit"
