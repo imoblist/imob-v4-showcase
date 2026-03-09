@@ -1,6 +1,9 @@
 import { motion } from 'motion/react';
 
 export function Footer() {
+  const appVersion = import.meta.env.VITE_APP_VERSION || '1.0.6';
+  const buildTime = import.meta.env.VITE_BUILD_TIME || 'N/A';
+
   return (
     <footer className="bg-background border-t border-white/10 pt-16 pb-8 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
@@ -58,7 +61,7 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-        <p>© 2026 Todos os direitos reservados - Imoblist - v1.0.1</p>
+        <p>© 2026 Todos os direitos reservados - Imoblist - (build {buildTime}) - v{appVersion}</p>
         <a href="https://www.imoblist.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
           www.imoblist.com.br
         </a>

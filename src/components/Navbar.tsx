@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import navbarLogo from '../../assets/logo-imoblist-hub-2.svg';
 import { Home, Share2, Layout, Users, Mail, HelpCircle, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ShinyButton } from '@/components/ui/shiny-button';
@@ -43,10 +44,9 @@ export function Navbar() {
           <div className="pointer-events-auto shrink-0 flex items-center h-full">
             <a href="#" className="flex items-center gap-2">
               <img 
-                src="https://painel.lipplead.com/wp-content/uploads/2026/03/LogoImobilist-1-scaled.png" 
+                src={navbarLogo}
                 alt="Imoblist HUB Logo" 
                 className="h-6 sm:h-8 md:h-10 lg:h-12 max-w-[120px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] w-auto object-contain transition-all duration-300"
-                referrerPolicy="no-referrer"
               />
             </a>
           </div>
@@ -80,7 +80,7 @@ export function Navbar() {
 
           {/* CTA Button & Mobile Toggle - Right */}
           <div className="flex items-center gap-3 md:gap-4 pointer-events-auto shrink-0">
-            <div className="block">
+            <div className="hidden xl:block">
               <a href="#contact" className="flex items-center">
                 <ShinyButton className="px-4 h-8 text-[10px] md:px-6 md:h-9 md:text-xs flex items-center justify-center whitespace-nowrap">
                   Começar Agora
