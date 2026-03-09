@@ -26,12 +26,12 @@ export function HowItWorksSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Como funciona?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Como funciona?</h2>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-start mb-16">
-          <div className="space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="space-y-12">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -42,8 +42,8 @@ export function HowItWorksSection() {
                 className="flex gap-4"
               >
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center text-accent">
-                    <CheckCircle2 size={18} />
+                  <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent">
+                    <CheckCircle2 size={20} />
                   </div>
                 </div>
                 <p className="text-lg text-gray-300 leading-relaxed">
@@ -57,17 +57,20 @@ export function HowItWorksSection() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative bg-[#0A0A0A] border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl"
+            className="relative group"
           >
-            <div className="flex items-start gap-4 mb-4">
-              <div className="shrink-0 text-accent mt-1">
-                <CircleAlert size={28} />
+            <div className="absolute -inset-1 bg-accent/20 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+            <div className="relative bg-[#0A0A0A] border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="shrink-0 text-accent mt-1">
+                  <CircleAlert size={28} />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-accent">Regra da Meta para local de conversão</h3>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-accent">Regra da Meta para local de conversão</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Ao utilizar catálogos a Meta não permite usar Whatsapp como local de conversão. Quando alguém clicar em um anúncio precisa ser direcionada para a página do imóvel correspondente.
+              </p>
             </div>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Ao utilizar catálogos a Meta não permite usar Whatsapp como local de conversão. Quando alguém clicar em um anúncio precisa ser direcionada para a página do imóvel correspondente.
-            </p>
           </motion.div>
         </div>
 
