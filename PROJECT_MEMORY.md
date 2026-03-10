@@ -29,6 +29,7 @@
 
 ### O que está em andamento
 - Ajustes finos de paridade visual podem continuar sob validação direta do Lauro.
+- Footer mobile: removido o botão "Voltar para o início" na coluna de endereço (conforme feedback do Lauro em 2026-03-10).
 
 ## 3) Decisions Log
 1. **Source-first obrigatório**
@@ -101,6 +102,7 @@
 - Localização de imagens/assets e padronização de labels/UI.
 - Criação deste `PROJECT_MEMORY.md` como bootstrap de contexto para IA.
 - Correção de contexto: branches válidas do projeto = `main` e `dev-luna`; evitar assumir stack sem validação explícita do Lauro.
+- Remoção do botão mobile "Voltar para o início" no footer (seção de endereço), com rebuild de `docs/` no fluxo source-first.
 
 ---
 ## AI Resume Prompt
