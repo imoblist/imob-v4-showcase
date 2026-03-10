@@ -31,6 +31,7 @@
 - Ajustes finos de paridade visual podem continuar sob validação direta do Lauro.
 - Footer mobile: removido o botão "Voltar para o início" na coluna de endereço (conforme feedback do Lauro em 2026-03-10).
 - Bump de versão para `1.0.13` + rebuild para refletir `v1.0.13` no footer.
+- Ajuste Hero/FAQ com bump para `1.0.14`: evitar quebra de "e‑commerce" no mobile e alterar resposta do FAQ para "Sim, é...".
 
 ## 3) Decisions Log
 1. **Source-first obrigatório**
@@ -105,6 +106,7 @@
 - Correção de contexto: branches válidas do projeto = `main` e `dev-luna`; evitar assumir stack sem validação explícita do Lauro.
 - Remoção do botão mobile "Voltar para o início" no footer (seção de endereço), com rebuild de `docs/` no fluxo source-first.
 - Atualização de versão para `1.0.13` e novo build para atualizar versionamento no footer.
+- Ajuste textual no Hero (nowrap em "e‑commerce") + atualização do FAQ ("Sim, é...") com rebuild de `docs/` e versão `1.0.14`.
 
 ---
 ## AI Resume Prompt
