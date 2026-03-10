@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "Preciso ter um gestor de tráfego?",
-    answer: "Sim, é necessário ter uma pessoa que faça a gestão dos anúncios, como se trata de um recurso mais avançado é fundamental ter um profissional com bom conhecimento, a fim de explorar o máximo de resultados"
+    answer: "Sim, será necessário ter uma pessoa que faça a gestão dos anúncios, como se trata de um recurso mais avançado é fundamental ter um profissional com bom conhecimento, a fim de explorar o máximo de resultados"
   },
   {
     question: "Os imóveis são publicados no Facebook e Instagram?",
