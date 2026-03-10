@@ -119,7 +119,7 @@ export function HeroHubOverview() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-5xl mx-auto"
           >
-            A tecnologia de anúncios dos grandes <span className="text-accent">e-commerces</span>, agora para a sua imobiliária
+            A tecnologia de anúncios dos grandes <span className="text-accent whitespace-nowrap">e‑commerce</span>, agora para a sua imobiliária
           </motion.h1>
           
           <motion.p 
