@@ -39,20 +39,20 @@ export function Navbar() {
           isScrolled ? "py-2" : "py-6"
         )}
       >
-        <div className="w-full max-w-7xl flex items-center justify-between relative gap-4">
+        <div className="w-full max-w-7xl relative gap-4 flex items-center justify-between xl:grid xl:grid-cols-3 xl:gap-0">
           {/* Logo - Left */}
-          <div className="pointer-events-auto shrink-0 flex items-center h-full">
+          <div className="pointer-events-auto shrink-0 flex items-center h-full xl:justify-start xl:pl-8">
             <a href="#" className="flex items-center gap-2">
               <img 
                 src={navbarLogo}
                 alt="Imoblist HUB Logo" 
-                className="h-6 sm:h-8 md:h-10 lg:h-12 max-w-[120px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] w-auto object-contain transition-all duration-300"
+                className="h-7 sm:h-10 md:h-12 lg:h-14 xl:h-10 max-w-[144px] sm:max-w-[192px] md:max-w-[240px] lg:max-w-[288px] xl:max-w-[204px] w-auto object-contain transition-all duration-300"
               />
             </a>
           </div>
 
           {/* Centered Pill Navigation (Desktop) */}
-          <nav className="hidden xl:flex pointer-events-auto justify-center flex-1 min-w-0">
+          <nav className="hidden xl:flex pointer-events-auto justify-center min-w-0">
             <div className="flex items-center gap-1 bg-[#0f172a]/90 backdrop-blur-md border border-white/10 rounded-full p-1.5 shadow-lg shadow-black/20">
               {navItems.map((item) => {
                 const isActive = activeItem === item.name;
@@ -79,7 +79,7 @@ export function Navbar() {
           </nav>
 
           {/* CTA Button & Mobile Toggle - Right */}
-          <div className="flex items-center gap-3 md:gap-4 pointer-events-auto shrink-0">
+          <div className="flex items-center gap-3 md:gap-4 pointer-events-auto shrink-0 xl:justify-end xl:pr-8">
             <div className="hidden xl:block">
               <a href="#contact" className="flex items-center">
                 <ShinyButton className="px-4 h-8 text-[10px] md:px-6 md:h-9 md:text-xs flex items-center justify-center whitespace-nowrap">
