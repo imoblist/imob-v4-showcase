@@ -39,14 +39,14 @@ export function Navbar() {
           isScrolled ? "py-2" : "py-6"
         )}
       >
-        <div className="w-full max-w-7xl relative gap-4 flex items-center justify-between xl:grid xl:grid-cols-3 xl:gap-0">
+        <div className="w-full relative gap-4 flex items-center justify-between xl:grid xl:grid-cols-3 xl:gap-0">
           {/* Logo - Left */}
           <div className="pointer-events-auto shrink-0 flex items-center h-full xl:justify-start xl:pl-8">
             <a href="#" className="flex items-center gap-2">
               <img 
                 src={navbarLogo}
                 alt="Imoblist HUB Logo" 
-                className="h-8 sm:h-12 md:h-14 lg:h-16 xl:h-8 max-w-[172px] sm:max-w-[230px] md:max-w-[288px] lg:max-w-[345px] xl:max-w-[163px] w-auto object-contain transition-all duration-300"
+                className="h-9 sm:h-14 md:h-16 lg:h-[4.5rem] xl:h-8 max-w-[198px] sm:max-w-[265px] md:max-w-[331px] lg:max-w-[397px] xl:max-w-[163px] w-auto object-contain transition-all duration-300"
               />
             </a>
           </div>
