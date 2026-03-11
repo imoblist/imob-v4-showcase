@@ -46,7 +46,7 @@ export function Navbar() {
               <img 
                 src={navbarLogo}
                 alt="Imoblist HUB Logo" 
-                className="h-7 sm:h-10 md:h-12 lg:h-14 xl:h-10 max-w-[144px] sm:max-w-[192px] md:max-w-[240px] lg:max-w-[288px] xl:max-w-[204px] w-auto object-contain transition-all duration-300"
+                className="h-8 sm:h-12 md:h-14 lg:h-16 xl:h-8 max-w-[172px] sm:max-w-[230px] md:max-w-[288px] lg:max-w-[345px] xl:max-w-[163px] w-auto object-contain transition-all duration-300"
               />
             </a>
           </div>
