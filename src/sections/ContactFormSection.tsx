@@ -9,6 +9,15 @@ export function ContactFormSection() {
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('Não foi possível enviar sua mensagem agora. Tente novamente em instantes.');
 
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, '').slice(0, 11);
+
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 6) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    if (digits.length <= 10) return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -26,7 +35,7 @@ export function ContactFormSection() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://api.imoblist.com/api/internal-lead', {
+      const response = await fetch('https://api.imoblist.com/internal-lead', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,7 +88,7 @@ export function ContactFormSection() {
           transition={{ duration: 0.5 }}
           className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl"
         >
-          <form className="space-y-6" onSubmit={handleSubmit} action="https://api.imoblist.com/api/internal-lead" method="post">
+          <form className="space-y-6" onSubmit={handleSubmit} action="https://api.imoblist.com/internal-lead" method="post">
             <input type="hidden" name="source" value="imoblist-hub" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -102,6 +111,12 @@ export function ContactFormSection() {
                   id="phone"
                   name="phone"
                   required
+                  inputMode="numeric"
+                  pattern="^\(\d{2}\)\s\d{4,5}-\d{4}$"
+                  maxLength={15}
+                  onChange={(e) => {
+                    e.currentTarget.value = formatPhone(e.currentTarget.value);
+                  }}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   placeholder="(00) 00000-0000"
                 />
