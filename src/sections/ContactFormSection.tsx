@@ -1,24 +1,66 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShinyButton } from '@/components/ui/shiny-button';
-import { ArrowUp, CheckCircle2, X } from 'lucide-react';
+import { ArrowUp, CheckCircle2, AlertCircle, X } from 'lucide-react';
 
 export function ContactFormSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('Não foi possível enviar sua mensagem agora. Tente novamente em instantes.');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      source: String(formData.get('source') ?? ''),
+      name: String(formData.get('name') ?? ''),
+      phone: String(formData.get('phone') ?? ''),
+      email: String(formData.get('email') ?? ''),
+      message: String(formData.get('message') ?? ''),
+    };
+
     setIsLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const response = await fetch('https://api.imoblist.com/api/internal-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || data?.success === false) {
+        const apiError = data?.error;
+        const fallback = 'Não foi possível enviar sua mensagem agora. Tente novamente em instantes.';
+
+        let message = fallback;
+        if (typeof apiError === 'string' && apiError.trim()) {
+          message = apiError;
+        } else if (Array.isArray(apiError) && apiError.length > 0) {
+          message = String(apiError[0]);
+        }
+
+        setErrorMessage(message);
+        setIsErrorModalOpen(true);
+        return;
+      }
+
       setIsSubmitted(true);
-      // Reset form if needed, but for now we just show the success message
-      const form = e.target as HTMLFormElement;
       form.reset();
-    }, 1500);
+    } catch {
+      setErrorMessage('Falha de conexão ao enviar sua mensagem. Verifique sua internet e tente novamente.');
+      setIsErrorModalOpen(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,13 +79,16 @@ export function ContactFormSection() {
           transition={{ duration: 0.5 }}
           className="bg-[#1a1a1a] border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl"
         >
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={handleSubmit} action="https://api.imoblist.com/api/internal-lead" method="post">
+            <input type="hidden" name="source" value="imoblist-hub" />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Nome *</label>
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   required
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   placeholder="Seu nome completo"
@@ -51,10 +96,11 @@ export function ContactFormSection() {
               </div>
 
               <div>
-                <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-300 mb-2">WhatsApp *</label>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">WhatsApp *</label>
                 <input
                   type="tel"
-                  id="whatsapp"
+                  id="phone"
+                  name="phone"
                   required
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   placeholder="(00) 00000-0000"
@@ -67,6 +113,7 @@ export function ContactFormSection() {
               <input
                 type="email"
                 id="email"
+                name="email"
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                 placeholder="seu@email.com"
               />
@@ -76,6 +123,7 @@ export function ContactFormSection() {
               <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
               <textarea
                 id="message"
+                name="message"
                 rows={4}
                 className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none"
                 placeholder="Como podemos ajudar?"
@@ -88,7 +136,7 @@ export function ContactFormSection() {
                 disabled={isLoading}
                 className="w-full md:w-auto px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
+                {isLoading ? 'Enviando...' : 'Enviar mensagem'}
               </ShinyButton>
             </div>
           </form>
@@ -160,6 +208,58 @@ export function ContactFormSection() {
                   className="mt-4 px-8 py-3 w-full"
                 >
                   Fechar
+                </ShinyButton>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Error Popup Modal */}
+      <AnimatePresence>
+        {isErrorModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsErrorModalOpen(false)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative bg-[#1a1a1a] border border-red-400/20 rounded-2xl p-8 md:p-12 max-w-md w-full shadow-2xl text-center overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-50%] left-[-50%] w-full h-full bg-red-500/10 blur-[100px] rounded-full" />
+                <div className="absolute bottom-[-50%] right-[-50%] w-full h-full bg-orange-500/10 blur-[100px] rounded-full" />
+              </div>
+
+              <button
+                onClick={() => setIsErrorModalOpen(false)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="relative z-10 flex flex-col items-center gap-6">
+                <div className="w-20 h-20 rounded-full bg-red-500/10 flex items-center justify-center text-red-300 border border-red-400/20 shadow-[0_0_30px_rgba(239,68,68,0.25)]">
+                  <AlertCircle size={40} />
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">Falha no envio</h3>
+                  <p className="text-gray-300 text-base md:text-lg">{errorMessage}</p>
+                </div>
+
+                <ShinyButton
+                  onClick={() => setIsErrorModalOpen(false)}
+                  className="mt-4 px-8 py-3 w-full"
+                >
+                  OK
                 </ShinyButton>
               </div>
             </motion.div>
