@@ -15,7 +15,7 @@ const navItems = [
 ];
 
 const whatsappMessage = encodeURIComponent(
-  'Olá! Tenho interesse e queria mais informações sobre o Imoblist HUB, por favor.'
+  'Olá! Tenho interesse e quero mais informações sobre o Imoblist HUB, por favor.'
 );
 
 const whatsappLinks = {
