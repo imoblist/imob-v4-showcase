@@ -116,7 +116,7 @@ export function Navbar() {
                 className="inline-flex items-center gap-2 rounded-full bg-[#25D366] hover:bg-[#128C7E] text-white px-5 py-2 text-sm font-semibold transition-colors duration-300 pulse-shadow"
               >
                 <IconBrandWhatsapp size={18} />
-                <span>Fale conosco</span>
+                <span>Fale pelo Whatspp</span>
               </a>
             </div>
 
@@ -172,7 +172,7 @@ export function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <IconBrandWhatsapp size={18} />
-                  <span>Fale conosco</span>
+                  <span>Fale pelo Whatspp</span>
                 </a>
               </div>
             </div>
@@ -190,7 +190,7 @@ export function Navbar() {
           'xl:hidden fixed bottom-5 z-50 inline-flex items-center bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full pulse-shadow',
           'transition-[left,transform,padding,width,border-radius,background-color] duration-500 ease-out',
           isScrolled
-            ? 'left-4 -translate-x-0 px-4 py-3 w-auto justify-center'
+            ? 'left-4 -translate-x-0 px-3 py-3 w-auto justify-center'
             : 'left-1/2 -translate-x-1/2 px-6 py-3 min-w-[220px] justify-center'
         )}
       >
@@ -202,7 +202,7 @@ export function Navbar() {
           )}
           aria-hidden={isScrolled}
         >
-          Fale conosco
+          Fale pelo Whatspp
         </span>
       </a>
     </>
