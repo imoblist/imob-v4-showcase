@@ -22,3 +22,16 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
 }
+
+@keyframes pulseOneWay {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+}
+
+.pulse-shadow {
+  animation: pulseOneWay 1.5s ease-out infinite;
+}
