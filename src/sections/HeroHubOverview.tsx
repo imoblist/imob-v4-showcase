@@ -119,7 +119,7 @@ export function HeroHubOverview() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-5xl mx-auto"
           >
-            A tecnologia de anúncios dos grandes <span className="text-accent whitespace-nowrap">e‑commerce</span>, agora para a sua imobiliária
+            Sua imobiliária <span className="text-accent whitespace-nowrap">ainda faz anúncios</span> no Facebook e Instagram <span className="text-accent whitespace-nowrap">de forma manual</span>? 
           </motion.h1>
           
           <motion.p 
@@ -128,7 +128,7 @@ export function HeroHubOverview() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto"
           >
-            Uma nova forma de anunciar, com essa poderosa ferramenta é possível integrar todo seu estoque de imóveis em suas campanhas no Facebook e Instagram
+            Poucas pessoas sabem, mas é possível automatizar e integrar todos os seus imóveis em suas campanhas no Meta ADS, ganhando mais escala e visibilidade
           </motion.p>
           
           <motion.div
@@ -139,7 +139,7 @@ export function HeroHubOverview() {
           >
             <a href="#contact">
               <ShinyButton className="hover:shadow-[0_0_30px_rgba(0,100,224,0.5)] px-8 py-4 text-lg">
-                Conhecer as Soluções
+                Queria saber mais
               </ShinyButton>
             </a>
           </motion.div>
