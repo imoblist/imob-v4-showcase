@@ -119,7 +119,7 @@ export function HeroHubOverview() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-5xl mx-auto"
           >
-            Sua imobiliária <span className="text-accent whitespace-nowrap">ainda faz anúncios</span> no Facebook e Instagram <span className="text-accent whitespace-nowrap">de forma manual</span>? 
+            Sua imobiliária <span className="text-accent">ainda faz anúncios</span> no Facebook e Instagram <span className="text-accent">de forma manual</span>? 
           </motion.h1>
           
           <motion.p 
