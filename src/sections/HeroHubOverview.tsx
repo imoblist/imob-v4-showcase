@@ -139,7 +139,7 @@ export function HeroHubOverview() {
           >
             <a href="#contact">
               <ShinyButton className="hover:shadow-[0_0_30px_rgba(0,100,224,0.5)] px-8 py-4 text-lg">
-                Queria saber mais
+                Quero saber mais
               </ShinyButton>
             </a>
           </motion.div>
