@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.18",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0 <23"
+  },
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "npm run clean && VITE_APP_VERSION=$npm_package_version VITE_BUILD_TIME=\"$(date '+%Y-%m-%d %H:%M')\" vite build",
@@ -18,7 +21,6 @@
     "@tailwindcss/vite": "^4.1.14",
     "@types/three": "^0.183.1",
     "@vitejs/plugin-react": "^5.0.4",
-    "better-sqlite3": "^12.4.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
